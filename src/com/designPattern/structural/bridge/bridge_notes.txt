@@ -1,0 +1,29 @@
+The Bridge Design Pattern is a structural design pattern that is used to decouple abstraction from implementation, so that both can vary independently.
+
+🧠 Real-Time Analogy: Remote Control & Devices
+Think of a Remote Control (abstraction) and the Device it controls (implementation):
+
+You can have TVs, Radios, or Projectors.
+
+And you can have BasicRemotes, AdvancedRemotes.
+
+The remote and device can change independently.
+
+That’s the Bridge Pattern — it bridges two hierarchies.
+
+🎯 When to Use Bridge Pattern
+
+✅ Use When	📝 Example
+You have multiple dimensions of variation	UI Themes vs Components, or Shape vs Color
+You want to decouple abstraction from implementation	Remote vs Device
+You want to avoid subclass explosion	Instead of CircleRed, CircleBlue, SquareRed, etc.
+💻 Real-Time Java Example: Message Sending System
+Goal:
+We want to send messages via different channels:
+
+Message Types: TextMessage, EmailMessage
+
+Channels: SMS, Email, PushNotification
+
+These should work independently, without hardcoding every combination.
+

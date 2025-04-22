@@ -1,0 +1,64 @@
+✅ Strategy Design Pattern - Definition
+The Strategy Pattern is a behavioral design pattern that enables selecting an algorithm’s behavior at runtime. It defines a family of algorithms, encapsulates each one, and makes them interchangeable without altering the client code.
+
+🎯 Intent: To allow an object to change its behavior without changing its class.
+
+🧠 How the File Compression Example Uses the Strategy Pattern
+Components in our code:
+
+Concept	Code Implementation
+Strategy Interface	CompressionStrategy
+Concrete Strategies	ZipCompression, RarCompression, TarCompression
+Context Class	CompressionContext
+Client Code	CompressionApp (main method)
+Flow:
+You define different compression algorithms in separate classes.
+
+Each of them implements the common interface CompressionStrategy.
+
+The CompressionContext class uses a reference to CompressionStrategy.
+
+At runtime, you inject the desired strategy (ZipCompression, etc.) into the context.
+
+So, instead of writing complex if-else or switch statements to select an algorithm, the Strategy Pattern encapsulates each behavior and delegates execution to the strategy object.
+
+📌 When and Why Should You Use the Strategy Pattern?
+✅ Use it when:
+You have multiple variants of an algorithm (e.g., sorting, compression, payment, etc.).
+
+You want to avoid bloated if-else or switch statements in your code.
+
+You want to decouple the algorithm from the object using it.
+
+You want to select a behavior at runtime.
+
+💡 Real-world use cases:
+Payment processing (CreditCard, UPI, PayPal)
+
+Sorting strategies (QuickSort, MergeSort)
+
+Validation logic (Simple, Regex, ExternalService)
+
+Authentication types (OAuth, JWT, LDAP)
+
+✅ Pros of Strategy Pattern
+
+Pros
+✔️ Open/Closed Principle – add new strategies without modifying existing code
+✔️ Eliminates if-else/switch statements
+✔️ Promotes flexibility and reusability
+✔️ Cleaner and maintainable code
+✔️ Behavior can be changed at runtime dynamically
+❌ Cons of Strategy Pattern
+
+Cons
+❗ You may end up with many classes (one per strategy)
+❗ Context must be aware of all available strategies
+❗ Strategy selection logic is still outside (could shift complexity to client)
+🧠 Summary
+
+Aspect	Strategy Pattern Gives You
+What	Interchangeable algorithms at runtime
+Why	To follow SOLID principles (Open/Closed, SRP)
+When	Multiple ways to perform a task
+How	Use interface + concrete implementations + context

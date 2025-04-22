@@ -1,0 +1,45 @@
+🧠 Mediator Design Pattern - Explained
+✅ Definition:
+The Mediator Pattern is a behavioral design pattern that defines an object (the mediator) that centralizes communication between objects in a system. It promotes loose coupling by preventing objects from referring to each other directly.
+
+🎯 Intent: Reduce chaos and dependencies between objects by having them communicate through a central mediator.
+
+📌 When & Why Should You Use Mediator?
+✅ Use it when:
+You have many interacting objects with complex dependencies.
+
+You want to reduce direct dependencies between classes (tight coupling).
+
+You need to centralize logic for object interactions.
+
+You want to improve maintainability and testability.
+
+📈 Real-world examples:
+Chat rooms (users send messages through a chat server) - Let’s simulate a chat room where multiple users can
+send messages to each other through a mediator (ChatRoom).
+
+Air traffic control (planes communicate through the control tower)
+
+UI components (e.g., buttons notifying dialogs)
+
+✅ Pros of Mediator Pattern
+
+Pros
+✔️ Reduces complexity of object communication
+✔️ Loose coupling between components
+✔️ Centralized control for communication
+✔️ Improves maintainability and testability
+✔️ Helps avoid spaghetti code from interdependent objects
+❌ Cons of Mediator Pattern
+
+Cons
+❗ Mediator can become a God Object if it holds too much logic
+❗ Can introduce performance bottlenecks in large-scale systems
+❗ Debugging can be harder due to indirect communication
+✅ Summary Table
+
+Aspect	Description
+Purpose	Centralize communication between objects
+Use When	Too many direct interactions causing tight coupling
+Benefits	Looser coupling, easier to manage
+Trade-offs	Mediator can grow complex over time

@@ -5,9 +5,12 @@ public class PaymentService {
         PaymentProcessorFactory factory = new PaymentProcessorFactory();
 
         PaymentProcessor processor = factory.getPaymentProcessor("creditcard");
-        processor.processPayment(100.0);
+        processor.processPayment(500.0);
 
         processor = factory.getPaymentProcessor("paypal");
-        processor.processPayment(200.0);
+        processor.processPayment(1000.0);
+
+        processor = factory.getPaymentProcessor("crypto");
+        processor.processPayment(5000.0);
     }
 }

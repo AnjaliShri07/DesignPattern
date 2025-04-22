@@ -1,0 +1,56 @@
+✅ What is the Command Design Pattern?
+The Command Pattern is a behavioral design pattern that turns a request into a standalone object that contains all the information about the request. This object can be stored, passed, logged, or executed later.
+
+🎯 Intent: Encapsulate a request as an object, thereby allowing you to parameterize clients with queues, logs, and undoable operations.
+
+📌 When and Why to Use the Command Pattern?
+✅ Use it when:
+You want to parameterize objects with operations.
+
+You want to queue or log requests (e.g., for delayed or retry execution).
+
+You want to support undo/redo operations.
+
+You want to decouple objects that issue a request from the objects that execute them.
+
+💡 Common Use Cases:
+UI buttons triggering actions (e.g., "Save", "Undo", "Redo")
+
+Task schedulers
+
+Transaction management
+
+Remote control systems
+
+Event-driven systems or messaging queues (e.g., Kafka, RabbitMQ)
+
+🧠 Components of Command Pattern
+
+Role	Description	Code Example
+Command	Interface that declares the execution method	Command
+ConcreteCommand	Implements the command and defines a binding between receiver and action	TurnOnCommand, TurnOffCommand
+Receiver	Knows how to perform the action	Light
+Invoker	Stores the command and triggers it	RemoteControl
+Client	Configures and initiates commands	CommandApp
+
+✅ Pros of Command Pattern
+
+Pros
+✔️ Decouples sender and receiver
+✔️ Allows undo/redo support
+✔️ Supports queuing, logging, and transactions
+✔️ Easy to add new commands without changing existing code
+✔️ Follows Open/Closed Principle
+❌ Cons of Command Pattern
+
+Cons
+❗ May increase number of classes
+❗ Can introduce complexity in simple scenarios
+❗ Needs careful command/state management for undo functionality
+💡 Summary
+
+Feature	Benefit
+Encapsulates request	Fully decouples action and execution
+Flexible	Can change or extend commands easily
+Scalable	Perfect for history/undo/log use cases
+Clean design	Keeps code modular and testable

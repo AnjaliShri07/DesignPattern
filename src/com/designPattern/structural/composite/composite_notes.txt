@@ -1,0 +1,38 @@
+🔷 What is the Composite Pattern?
+Definition: Composite pattern composes objects into tree structures to represent part-whole hierarchies. It lets clients treat individual objects and compositions the same way.
+
+🔧 When to Use?
+Use Composite when:
+
+You need to represent a hierarchical structure (like a tree).
+You want to treat individual objects and groups of objects in the same way.
+You want to simplify client code by eliminating complex conditionals.
+
+💡 Real-Time Example – File System
+In a file system:
+A File is a leaf node.
+A Directory (Folder) is a composite that contains files or other folders.
+
+🏢 Real-World Example: Company Employee Structure
+Imagine you're modeling an organization where:
+Employees can be individual workers or managers (who manage other employees).
+All employees have a name, designation, and salary.
+You want to treat individual employees and groups of employees (like managers) uniformly.
+
+✅ Pros
+✔ Easy to add new components (leaf or composite).
+✔ Clients treat individual and group objects uniformly.
+✔ Flexible hierarchy for recursive structures (e.g., trees).
+✔ Simplifies code: no need to distinguish between file and directory.
+
+❌ Cons
+✘ Can make the design overly general.
+✘ Might lead to unnecessary abstraction.
+✘ Leaves and composites share the same interface (might expose irrelevant methods).
+
+📌 Summary
+Feature | Description
+Pattern Type | Structural
+Treats Same | Individual and composite objects
+Structure | Tree-like hierarchy
+Use Cases | File systems, GUI components, organization structures

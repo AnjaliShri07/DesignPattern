@@ -1,0 +1,33 @@
+🔗 Chain of Responsibility Design Pattern
+✅ Definition
+It allows a request to be passed along a chain of handlers. Each handler decides either to process the request or to pass it to the next handler.
+
+📦 Real-Time Use Case: Request Approval System
+Scenario:
+You work in a company where purchase requests need to be approved. Based on the amount, the request is approved by:
+
+Manager (≤ 1,000)
+
+Director (≤ 10,000)
+
+CEO (> 10,000)
+
+✅ When to Use Chain of Responsibility Pattern
+
+Use When:
+You have multiple handlers that can process a request
+You want to decouple the sender of a request from its receiver
+You want flexibility in assigning responsibility at runtime
+✅ Pros
+✔️ Reduces coupling between sender and receiver
+
+✔️ Adds flexibility in assigning responsibilities
+
+✔️ Easy to add/remove handlers dynamically
+
+❌ Cons
+❗ Request might go unhandled if no handler takes responsibility
+
+❗ Can be hard to debug due to many indirections
+
+❗ Order of handlers matters, and can lead to bugs if misconfigured

@@ -31,7 +31,6 @@ class PerfectSingletonClass {
         return getInstance();
     }
 
-
     // Example method to demonstrate functionality
     public void doSomething() {
         System.out.println("Singleton instance is working");

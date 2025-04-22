@@ -1,0 +1,71 @@
+Sure! The Decorator Design Pattern is a structural pattern that allows you to dynamically add behavior or responsibilities to objects without modifying their code.
+
+🧠 Real-Time Analogy: Coffee Shop
+Imagine you're at a coffee shop:
+
+You start with a base coffee ☕.
+
+You can add milk, sugar, whipped cream, etc.
+
+Each add-on increases the cost and maybe adds to the description.
+
+This is exactly what the Decorator Pattern does: it wraps the base object with new behavior without changing its class.
+
+🎯 Use Cases in Real Projects
+
+Use Case	Description
+UI Widgets	Add scrollbars, borders to components
+Logging	Add logging before/after method execution
+I/O Streams	Java’s BufferedReader, DataInputStream
+Spring Security	Decorate filters/interceptors
+Coffee Shop Billing	Calculate cost dynamically with add-ons
+✅ Real-Time Java Example: Coffee Shop Billing System
+Structure:
+Component Interface: Coffee
+
+Concrete Component: SimpleCoffee
+
+Decorator Abstract Class: CoffeeDecorator
+
+Concrete Decorators: MilkDecorator, SugarDecorator, WhippedCreamDecorator
+
+
+✅ 1. Why Abstract Class?
+Reason: It provides a base implementation for all decorators while still being flexible to extend behavior.
+
+💡 Purpose of Making It Abstract:
+You cannot create an object of CoffeeDecorator directly.
+
+You are forcing subclasses (like MilkDecorator, SugarDecorator) to extend it and potentially override methods.
+
+It helps enforce a template structure for decorators.
+
+👇 Without abstract:
+
+CoffeeDecorator cd = new CoffeeDecorator(new SimpleCoffee()); // This would be legal — but we don’t want it!
+By making it abstract, we prevent direct instantiation, keeping the class meaningful only as a base.
+
+✅ 2. Why protected field (decoratedCoffee)?
+
+protected Coffee decoratedCoffee;
+protected makes the decoratedCoffee field accessible to subclasses, but not outside the package or from unrelated classes.
+
+🧠 Why not private?
+If it were private, subclasses like MilkDecorator, SugarDecorator wouldn't be able to access or call methods on it.
+
+Why not public?
+It breaks encapsulation. You don’t want just anyone modifying the internal reference.
+
+protected is a middle ground:
+
+Modifier	Who can access?
+private	Only within same class
+protected	Class itself + all subclasses
+public	Everyone (risky!)
+So with protected, this works in a subclass:
+
+
+@Override
+public double getCost() {
+    return decoratedCoffee.getCost() + 1.5;
+}
